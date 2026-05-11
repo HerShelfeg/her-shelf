@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #2C2C2C;
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E8B4B8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2C2C2C;
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #2C2C2C;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: #E8B4B8;
+}
+
+.nav-cart a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #2C2C2C;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-cart a:hover {
+  color: #E8B4B8;
+}
