@@ -16,7 +16,7 @@ function addToCart(name, price) {
   }
   saveCart();
   updateCartCount();
-  showCartNotification(name);
+  showCartNotification();
 }
 
 // Update cart count in navbar
@@ -30,7 +30,7 @@ function updateCartCount() {
 }
 
 // Show notification
-function showCartNotification(name) {
+function showCartNotification() {
   const notif = document.getElementById('cart-notif');
   if (notif) {
     notif.textContent = '✓ Added to cart';
@@ -58,13 +58,12 @@ function orderOnWhatsApp() {
   });
 
   message += `%0A*Total: EGP ${total}*%0A%0APlease confirm my order!`;
-
   window.open(`https://wa.me/201559789954?text=${message}`, '_blank');
 
-  // Clear cart after order
   cart = [];
   saveCart();
   updateCartCount();
+  if (typeof renderCart === 'function') renderCart();
 }
 
 // Run on every page

@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-links">
       <a href="index.html#categories">Shop</a>
@@ -30,11 +29,10 @@
     </div>
   </nav>
 
-  <!-- Cart -->
   <section class="cart-page">
     <h1>Your Cart</h1>
     <div id="cart-items"></div>
-    <div id="cart-empty" class="cart-empty">
+    <div id="cart-empty" class="cart-empty" style="display:none;">
       <p>Your cart is empty.</p>
       <a href="index.html#categories" class="btn">Continue Shopping</a>
     </div>
@@ -49,7 +47,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-logo">Her Shelf</div>
     <p class="footer-tagline">Your beauty, curated.</p>
@@ -110,6 +107,7 @@
           cart = cart.filter(i => i.name !== name);
         }
       }
+      saveCart();
       renderCart();
     }
 
