@@ -1,5 +1,10 @@
-// Cart System
-let cart = [];
+// Load cart from localStorage
+let cart = JSON.parse(localStorage.getItem('hershelf-cart')) || [];
+
+// Save cart to localStorage
+function saveCart() {
+  localStorage.setItem('hershelf-cart', JSON.stringify(cart));
+}
 
 // Add to cart
 function addToCart(name, price) {
@@ -9,6 +14,7 @@ function addToCart(name, price) {
   } else {
     cart.push({ name, price, qty: 1 });
   }
+  saveCart();
   updateCartCount();
   showCartNotification(name);
 }
@@ -27,7 +33,7 @@ function updateCartCount() {
 function showCartNotification(name) {
   const notif = document.getElementById('cart-notif');
   if (notif) {
-    notif.textContent = `✓ ${name} added`;
+    notif.textContent = '✓ Added to cart';
     notif.style.display = 'block';
     setTimeout(() => {
       notif.style.display = 'none';
@@ -42,7 +48,7 @@ function orderOnWhatsApp() {
     return;
   }
 
-  let message = 'Hello! I would like to pre-order the following:%0A%0A';
+  let message = 'Hello! I would like to pre-order:%0A%0A';
   let total = 0;
 
   cart.forEach(item => {
@@ -51,7 +57,15 @@ function orderOnWhatsApp() {
     message += `• ${item.name} x${item.qty} — EGP ${itemTotal}%0A`;
   });
 
-  message += `%0A*Total: EGP ${total}*%0A%0APlease confirm my order. Thank you!`;
+  message += `%0A*Total: EGP ${total}*%0A%0APlease confirm my order!`;
 
   window.open(`https://wa.me/201559789954?text=${message}`, '_blank');
+
+  // Clear cart after order
+  cart = [];
+  saveCart();
+  updateCartCount();
 }
+
+// Run on every page
+updateCartCount();
