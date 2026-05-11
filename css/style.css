@@ -16,6 +16,21 @@ h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
 }
 
+/* Cart Notification */
+#cart-notif {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: none;
+  z-index: 999;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -58,17 +73,30 @@ h1, h2, h3 {
   color: #E8B4B8;
 }
 
-.nav-cart a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  color: #2C2C2C;
-  text-decoration: none;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.nav-cart {
+  position: relative;
 }
 
-.nav-cart a:hover {
-  color: #E8B4B8;
+.nav-cart a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #E8B4B8;
+  color: #FFFFFF;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hero */
@@ -112,6 +140,7 @@ h1, h2, h3 {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -170,4 +199,327 @@ h1, h2, h3 {
 
 .category-link:hover {
   color: #E8B4B8;
+}
+
+/* Shop Header */
+.shop-header {
+  text-align: center;
+  padding: 60px 24px 40px;
+  background-color: #FDF0F0;
+}
+
+.shop-header h1 {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.shop-header p {
+  font-size: 13px;
+  color: #9A9A9A;
+  letter-spacing: 1px;
+}
+
+/* Products Grid */
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 40px 16px;
+}
+
+.product-card {
+  background-color: #FFFFFF;
+  border: 1px solid #FDF0F0;
+}
+
+.product-img {
+  width: 100%;
+  height: 180px;
+  background-color: #FDF0F0;
+}
+
+.product-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.product-category {
+  font-size: 10px;
+  color: #E8B4B8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.product-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2C2C2C;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.product-price {
+  font-size: 13px;
+  color: #2C2C2C;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.product-info .btn {
+  font-size: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* About */
+.about {
+  text-align: center;
+  padding: 80px 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.about p {
+  font-size: 14px;
+  color: #9A9A9A;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 80px 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h1 {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.contact > p {
+  font-size: 14px;
+  color: #9A9A9A;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.contact-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #2C2C2C;
+  padding: 16px 36px;
+  text-decoration: none;
+  display: block;
+}
+
+.contact-btn.whatsapp {
+  background-color: #E8B4B8;
+  color: #2C2C2C;
+}
+
+.contact-info p {
+  font-size: 13px;
+  color: #9A9A9A;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Cart Page */
+.cart-page {
+  padding: 60px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cart-page h1 {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cart-empty p {
+  font-size: 14px;
+  color: #9A9A9A;
+  margin-bottom: 24px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #FDF0F0;
+  gap: 12px;
+}
+
+.cart-item-info h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.cart-item-info p {
+  font-size: 12px;
+  color: #9A9A9A;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item-controls button {
+  background: none;
+  border: 1px solid #E8B4B8;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2C2C2C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-controls span {
+  font-size: 13px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cart-item-total {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cart-total {
+  padding: 24px 0;
+  border-top: 1px solid #2C2C2C;
+  margin-top: 16px;
+  text-align: right;
+}
+
+.cart-total p {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.whatsapp-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  background-color: #25D366;
+  padding: 16px;
+  font-size: 13px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.continue-link {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #9A9A9A;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.continue-link:hover {
+  color: #E8B4B8;
+}
+
+/* Footer */
+.footer {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #9A9A9A;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.footer-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  color: #E8B4B8;
+}
+
+.footer-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #9A9A9A;
+  letter-spacing: 1px;
 }

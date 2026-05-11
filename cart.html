@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Her Shelf</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="index.html#categories">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-logo">
+      <a href="index.html">Her Shelf</a>
+    </div>
+    <div class="nav-cart">
+      <a href="cart.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Cart -->
+  <section class="cart-page">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div id="cart-empty" class="cart-empty">
+      <p>Your cart is empty.</p>
+      <a href="index.html#categories" class="btn">Continue Shopping</a>
+    </div>
+    <div id="cart-summary" style="display:none;">
+      <div class="cart-total">
+        <p>Total: <span id="cart-total-price">EGP 0</span></p>
+      </div>
+      <button class="btn whatsapp-btn" onclick="orderOnWhatsApp()">
+        Order on WhatsApp 🛒
+      </button>
+      <a href="index.html#categories" class="continue-link">← Continue Shopping</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">Her Shelf</div>
+    <p class="footer-tagline">Your beauty, curated.</p>
+    <div class="footer-links">
+      <a href="index.html#categories">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Her Shelf Egypt. All rights reserved.</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script>
+    function renderCart() {
+      const items = document.getElementById('cart-items');
+      const empty = document.getElementById('cart-empty');
+      const summary = document.getElementById('cart-summary');
+      const totalEl = document.getElementById('cart-total-price');
+
+      if (cart.length === 0) {
+        empty.style.display = 'block';
+        summary.style.display = 'none';
+        items.innerHTML = '';
+        return;
+      }
+
+      empty.style.display = 'none';
+      summary.style.display = 'block';
+
+      let total = 0;
+      items.innerHTML = cart.map(item => {
+        total += item.price * item.qty;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <h3>${item.name}</h3>
+              <p>EGP ${item.price} x ${item.qty}</p>
+            </div>
+            <div class="cart-item-controls">
+              <button onclick="changeQty('${item.name}', -1)">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty('${item.name}', 1)">+</button>
+            </div>
+            <p class="cart-item-total">EGP ${item.price * item.qty}</p>
+          </div>
+        `;
+      }).join('');
+
+      totalEl.textContent = `EGP ${total}`;
+      updateCartCount();
+    }
+
+    function changeQty(name, change) {
+      const item = cart.find(i => i.name === name);
+      if (item) {
+        item.qty += change;
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.name !== name);
+        }
+      }
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
