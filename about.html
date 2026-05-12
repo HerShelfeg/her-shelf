@@ -8,10 +8,11 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <div id="cart-notif"></div>
+
   <nav class="navbar">
     <div class="nav-links">
-      <a href="shop.html">Shop</a>
+      <a href="index.html#categories">Shop</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -19,11 +20,17 @@
       <a href="index.html">Her Shelf</a>
     </div>
     <div class="nav-cart">
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span id="cart-count">0</span>
+      </a>
     </div>
   </nav>
 
-  <!-- About -->
   <section class="about">
     <h1>About Us</h1>
     <p>Her Shelf is a trusted pre-order beauty store based in Egypt. We bring you original skincare, makeup & perfumes — handpicked from verified suppliers.</p>
@@ -31,17 +38,17 @@
     <p>Based in Damanhour. Delivering across Egypt. 🌸</p>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-logo">Her Shelf</div>
     <p class="footer-tagline">Your beauty, curated.</p>
     <div class="footer-links">
-      <a href="shop.html">Shop</a>
+      <a href="index.html#categories">Shop</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
     <p class="footer-copy">© 2026 Her Shelf Egypt. All rights reserved.</p>
   </footer>
 
+  <script src="js/cart.js"></script>
 </body>
 </html>
