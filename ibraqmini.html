@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibraq Musky Mini — Her Shelf</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="cart-notif"></div>
+
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="index.html#categories">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-logo">
+      <a href="index.html">Her Shelf</a>
+    </div>
+    <div class="nav-cart">
+      <a href="cart.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C2C2C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="shop-header">
+    <h1>Ibraq Musky Mini</h1>
+    <p>Choose your scent — EGP 520 each.</p>
+  </section>
+
+  <div class="breadcrumb">
+    <a href="perfumes.html" style="text-decoration: none; color: #2C2C2C; padding-left: 20px;">← Back to Perfumes</a>
+  </div>
+
+  <section class="products">
+
+    <!-- Ibraq Musky Al Shams -->
+    <div class="product-card">
+      <img src="images/perfumes/braq/ibraq-musky-al-shams.png" alt="Ibraq Musky Al Shams">
+      <div class="product-info">
+        <p class="product-category">Ibraq</p>
+        <h3>Musky Al Shams</h3>
+        <p class="product-price">EGP 520</p>
+        <button class="btn" onclick="addToCart('Ibraq Musky Al Shams (Mini)', 520)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Ibraq Musky Raspberry -->
+    <div class="product-card">
+      <img src="images/perfumes/braq/ibraq-musky-raspberry.png" alt="Ibraq Musky Raspberry">
+      <div class="product-info">
+        <p class="product-category">Ibraq</p>
+        <h3>Musky Raspberry</h3>
+        <p class="product-price">EGP 520</p>
+        <button class="btn" onclick="addToCart('Ibraq Musky Raspberry (Mini)', 520)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Ibraq Musky Abaq Pomegranate -->
+    <div class="product-card">
+      <img src="images/perfumes/braq/ibraq-musky-abaq-pomegranate.png" alt="Ibraq Musky Abaq Pomegranate">
+      <div class="product-info">
+        <p class="product-category">Ibraq</p>
+        <h3>Musky Abaq Pomegranate</h3>
+        <p class="product-price">EGP 520</p>
+        <button class="btn" onclick="addToCart('Ibraq Musky Abaq Pomegranate (Mini)', 520)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Ibraq Musky Al Fajr -->
+    <div class="product-card">
+      <img src="images/perfumes/braq/ibraq-musky-al-fajr.png" alt="Ibraq Musky Al Fajr">
+      <div class="product-info">
+        <p class="product-category">Ibraq</p>
+        <h3>Musky Al Fajr</h3>
+        <p class="product-price">EGP 520</p>
+        <button class="btn" onclick="addToCart('Ibraq Musky Al Fajr (Mini)', 520)">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Ibraq Musky Sugar -->
+    <div class="product-card">
+      <img src="images/perfumes/braq/ibraq-musky-sugar.png" alt="Ibraq Musky Sugar">
+      <div class="product-info">
+        <p class="product-category">Ibraq</p>
+        <h3>Musky Sugar</h3>
+        <p class="product-price">EGP 520</p>
+        <button class="btn" onclick="addToCart('Ibraq Musky Sugar (Mini)', 520)">Add to Cart</button>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p class="footer-copy">© 2026 Her Shelf Egypt. All rights reserved.</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

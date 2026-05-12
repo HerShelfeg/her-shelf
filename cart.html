@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <div id="cart-notif"></div>
+
   <nav class="navbar">
     <div class="nav-links">
       <a href="index.html#categories">Shop</a>
@@ -67,9 +69,9 @@
       const totalEl = document.getElementById('cart-total-price');
 
       if (cart.length === 0) {
+        items.innerHTML = '';
         empty.style.display = 'block';
         summary.style.display = 'none';
-        items.innerHTML = '';
         return;
       }
 
@@ -83,19 +85,19 @@
           <div class="cart-item">
             <div class="cart-item-info">
               <h3>${item.name}</h3>
-              <p>EGP ${item.price} x ${item.qty}</p>
+              <p>EGP ${item.price.toLocaleString()} each</p>
             </div>
             <div class="cart-item-controls">
               <button onclick="changeQty('${item.name}', -1)">−</button>
               <span>${item.qty}</span>
               <button onclick="changeQty('${item.name}', 1)">+</button>
             </div>
-            <p class="cart-item-total">EGP ${item.price * item.qty}</p>
+            <p class="cart-item-total">EGP ${(item.price * item.qty).toLocaleString()}</p>
           </div>
         `;
       }).join('');
 
-      totalEl.textContent = `EGP ${total}`;
+      totalEl.textContent = `EGP ${total.toLocaleString()}`;
       updateCartCount();
     }
 
@@ -111,6 +113,7 @@
       renderCart();
     }
 
+    // render after cart.js has loaded and parsed localStorage
     renderCart();
   </script>
 </body>
