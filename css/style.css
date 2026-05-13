@@ -586,3 +586,94 @@ h1, h2, h3 {
   color: #9A9A9A;
   letter-spacing: 1px;
 }
+/* Brand Title */
+.brand-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2C2C2C;
+  text-align: center;
+  padding: 40px 24px 0;
+  border-top: 1px solid #FDF0F0;
+  margin-top: 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.breadcrumb a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #9A9A9A;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.breadcrumb a:hover {
+  color: #E8B4B8;
+}
+
+/* Coming Soon */
+.coming-soon {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FDF0F0;
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.coming-soon-inner {
+  max-width: 400px;
+}
+
+.coming-soon-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #E8B4B8;
+  margin-bottom: 16px;
+}
+
+.coming-soon h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #2C2C2C;
+  margin-bottom: 20px;
+}
+
+.coming-soon-line {
+  width: 40px;
+  height: 1px;
+  background-color: #E8B4B8;
+  margin: 0 auto 20px;
+}
+
+.coming-soon-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #E8B4B8;
+  margin-bottom: 16px;
+}
+
+.coming-soon-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #9A9A9A;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
